@@ -2,9 +2,9 @@ package model.entity;
 
 import model.Entity.EntityProperties;
 
-class Link extends Entity {
+class Subreddit extends Entity {
     public static var properties: EntityProperties = {
-        tableName: 'link',
+        tableName: 'subreddit',
         tableColumns: [
             {
                 name: 'id',
@@ -17,8 +17,8 @@ class Link extends Entity {
                 primary: false
             },
             {
-                name: 'content',
-                mappedBy: 'content',
+                name: 'refresh_interval',
+                mappedBy: 'refreshInterval',
                 primary: false
             }
         ]
@@ -26,5 +26,5 @@ class Link extends Entity {
 
     public var id: Int;
     public var name: String;
-    public var content: String;
+    public var refreshInterval: Int;
 }

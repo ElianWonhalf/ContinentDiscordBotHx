@@ -77,6 +77,19 @@
     "%% => Compris, c'est dans la boîte !"
   ],
 
+  "model.commandlist.setsubreddit.description": [
+    "Permet de rajouter ou modifier un subreddit à sonder"
+  ],
+  "model.commandlist.setsubreddit.process.wrong_format": [
+    "%% => On a un souci. Je crois que tu as mal tapé la commande, du coup j'ai rien compris."
+  ],
+  "model.commandlist.setsubreddit.process.fail": [
+    "%% => Nope, ça n'a pas fonctionné : %%"
+  ],
+  "model.commandlist.setsubreddit.process.success": [
+    "%% => Compris, c'est dans la boîte !"
+  ],
+
   "model.commandlist.getwelcomemessage.description": [
     "Permet de voir le message de bienvenue qui sera envoyé par message privé aux personnes qui rejoindront ce salon"
   ],
@@ -251,6 +264,22 @@
     "%% => Compris, c'est supprimé !"
   ],
 
+  "model.commandlist.deletesubreddit.description": [
+    "Permet de supprimer un subreddit à sonder"
+  ],
+  "model.commandlist.deletesubreddit.process.wrong_format": [
+    "%% => Tu veux supprimer un subreddit, sans me préciser lequel ? Je vais avoir du mal à deviner :/ ."
+  ],
+  "model.commandlist.deletesubreddit.process.not_found": [
+    "%% => Le subreddit que tu me demandes de supprimer n'existe déjà pas. J'imagine que c'est une bonne nouvelle, non ?"
+  ],
+  "model.commandlist.deletesubreddit.process.fail": [
+    "%% => Nope, ça n'a pas fonctionné : %%"
+  ],
+  "model.commandlist.deletesubreddit.process.success": [
+    "%% => Compris, c'est supprimé !"
+  ],
+
   "model.commandlist.getlinks.description": [
     "Permet de consulter la liste des ressources disponibles"
   ],
@@ -393,8 +422,21 @@
   "model.commandlist.link.process.not_found": [
     "Désolé %%, je n'ai pas trouvé de ressource associée à ce nom :/ ..."
   ],
+  "model.commandlist.subreddit.process.fail": [
+    "Bon... Soit ton subreddit n'existe pas, soit j'ai atteint la limite d'appels à l'API par jour, soit... Reddit a planté. Je suis désolé %% :( ..."
+  ],
   "model.commandlist.link.process.parse_error": [
     "Il faudrait me donner le nom de la ressource que tu recherches, %%, sinon je vais avoir du mal à la trouver."
+  ],
+
+  "model.commandlist.subreddit.description": [
+    "Permet de récupérer les derniers posts depuis un subreddit"
+  ],
+  "model.commandlist.subreddit.process.not_found": [
+    "Désolé %%, je n'ai pas trouvé ce subreddit :/ ..."
+  ],
+  "model.commandlist.subreddit.process.parse_error": [
+    "Il faudrait me donner le nom du subreddit que tu recherches, %%, sinon je vais avoir du mal à le trouver."
   ],
 
   "model.commandlist.meme.description": [

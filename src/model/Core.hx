@@ -1,6 +1,7 @@
 package model;
 
 import discordhx.Resolvables.Base64Resolvable;
+import discordhx.Resolvables.MessageResolvable;
 import discordhx.channel.ServerChannel;
 import discordhx.channel.Channel;
 import discordhx.channel.PMChannel;
@@ -46,6 +47,10 @@ class Core {
 
     public function setClientAvatar(data: Base64Resolvable, ?callback: Dynamic->Void): Void {
         _client.setAvatar(data, callback);
+    }
+
+    public function deleteMessage(message: MessageResolvable): Void {
+        _client.deleteMessage(message);
     }
 
     public function createCommunicationContext(?msg: Message): CommunicationContext {

@@ -48,6 +48,19 @@
     "If you don't give me the name of the resource you're looking for, %%, I might have trouble finding it."
   ],
 
+  "model.commandlist.subreddit.description": [
+    "Allows you to retrieve the last posts from a subreddit"
+  ],
+  "model.commandlist.subreddit.process.not_found": [
+    "Sorry %%, I couldn't find that subreddit :/ ..."
+  ],
+  "model.commandlist.subreddit.process.fail": [
+    "Welp... Either your subreddit doesn't exist, or I reached the API call-by-day limit, or... Reddit crashed. I'm sorry %% :( ..."
+  ],
+  "model.commandlist.subreddit.process.parse_error": [
+    "If you don't give me the name of the subreddit you're looking for, %%, I might have trouble finding it."
+  ],
+
   "model.commandlist.addtagtoblacklist.description": [
     "Allows you to forbid a tag while searching on e621 or e926"
   ],
@@ -84,6 +97,19 @@
     "%% => Nope, didn't work : %%"
   ],
   "model.commandlist.setlink.process.success": [
+    "%% => Got it, saved it!"
+  ],
+
+  "model.commandlist.setsubreddit.description": [
+    "Allows you to add or edit a subreddit to probe"
+  ],
+  "model.commandlist.setsubreddit.process.wrong_format": [
+    "%% => We got a problem. I think you got mistaken while typing the command... I did not understand a thing."
+  ],
+  "model.commandlist.setsubreddit.process.fail": [
+    "%% => Nope, didn't work : %%"
+  ],
+  "model.commandlist.setsubreddit.process.success": [
     "%% => Got it, saved it!"
   ],
 
@@ -255,6 +281,22 @@
     "%% => Nope, didn't work : %%"
   ],
   "model.commandlist.deletelink.process.success": [
+    "%% => Got it, deleted it!"
+  ],
+
+  "model.commandlist.deletesubreddit.description": [
+    "Allows you to delete a subreddit to probe"
+  ],
+  "model.commandlist.deletesubreddit.process.wrong_format": [
+    "%% => You're asking me to delete a subreddit without telling me which one it is? I may have trouble guessing it :/ ."
+  ],
+  "model.commandlist.deletesubreddit.process.not_found": [
+    "%% => The subreddit you're asking me to delete doesn't exist. I guess it's good news?"
+  ],
+  "model.commandlist.deletesubreddit.process.fail": [
+    "%% => Nope, didn't work : %%"
+  ],
+  "model.commandlist.deletesubreddit.process.success": [
     "%% => Got it, deleted it!"
   ],
 
