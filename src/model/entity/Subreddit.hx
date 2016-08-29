@@ -45,10 +45,10 @@ class Subreddit extends Entity {
     public function checkForNewPosts(): Void {
         Logger.info('Checking for new posts on ' + name + '...');
 
-        var path = '/r/' + name + '/new.json';
+        var path = '/r/' + name + '/new.json?sort=new';
 
         if (lastIdFetched != null) {
-            path += '?before=' + lastIdFetched;
+            path += '&before=' + lastIdFetched;
         }
 
         HttpUtils.query(true, 'www.reddit.com', path, cast HTTPMethod.Get, function (data: String) {
@@ -69,14 +69,12 @@ class Subreddit extends Entity {
                     var context = Core.instance.createCommunicationContext();
                     var message: String = '';
 
-                    lastIdFetched = children[0].data.subreddit_id;
+                    lastIdFetched = children[0].data.name;
                     save();
 
                     children = children.filter(function (child: Dynamic): Bool {
                         return !child.data.stickied;
                     });
-
-                    children.reverse();
 
                     for (child in children) {
                         if (message.length > 0) {
