@@ -1,5 +1,6 @@
 package event;
 
+import model.IntervalHandler;
 import config.Config;
 import model.entity.WelcomeMessage;
 import model.CommunicationContext;
@@ -33,6 +34,7 @@ class ClientEventHandler extends EventHandler<Client> {
         Channel.registerChannels();
         UserEntity.registerUsers();
         Chat.initialize();
+        IntervalHandler.initialize();
     }
 
     private function messageHandler(msg: Message): Void {

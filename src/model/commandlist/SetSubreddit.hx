@@ -42,6 +42,7 @@ class SetSubreddit implements ICommandDefinition {
                         _context.sendToChannel('model.commandlist.setsubreddit.process.fail', cast [author, err]);
                     } else {
                         _context.sendToChannel('model.commandlist.setsubreddit.process.success', cast [author]);
+                        IntervalHandler.instance.refreshIntervalList();
                     }
                 });
             });

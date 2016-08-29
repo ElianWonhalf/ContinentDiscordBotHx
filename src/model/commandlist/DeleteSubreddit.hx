@@ -37,6 +37,7 @@ class DeleteSubreddit implements ICommandDefinition {
                             _context.sendToChannel('model.commandlist.deletesubreddit.process.fail', cast [author, err]);
                         } else {
                             _context.sendToChannel('model.commandlist.deletesubreddit.process.success', cast [author]);
+                            IntervalHandler.instance.refreshIntervalList();
                         }
                     });
                 } else {

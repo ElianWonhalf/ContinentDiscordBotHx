@@ -27,13 +27,28 @@ class Entity {
             var result = new Array<T>();
 
             for (row in rows) {
-                var entity = Type.createInstance(entity, []);
+                var entityInstance = Type.createInstance(entity, []);
+                var entityProperties:EntityProperties = cast Reflect.field(entity, 'properties');
+                var primaryKeys:Array<String> = entityProperties.tableColumns.filter(function (element: Dynamic): Bool {
+                    return element.primary;
+                }).map(function (element: Dynamic): String {
+                    return element.mappedBy;
+                });
+                var isNew = true;
 
                 for (column in Reflect.fields(row)) {
-                    Reflect.setProperty(entity, columnPropertyMap.get(column), Reflect.field(row, column));
+                    Reflect.setProperty(entityInstance, columnPropertyMap.get(column), Reflect.field(row, column));
                 }
 
-                result.push(entity);
+                for (primaryKey in primaryKeys) {
+                    isNew = isNew && Reflect.getProperty(entityInstance, primaryKey) == null;
+                }
+
+                if (!isNew) {
+                    Reflect.callMethod(entityInstance, Reflect.getProperty(entityInstance, 'filledHandler'), []);
+                }
+
+                result.push(entityInstance);
             }
 
             callback(result);
@@ -42,6 +57,10 @@ class Entity {
 
     public function new() {
         _isNew = true;
+    }
+
+    public function filledHandler(): Void {
+        _isNew = false;
     }
 
     public function retrieve(primaryValues: Map<String, String>, ?callback: Bool->Void): Void {
