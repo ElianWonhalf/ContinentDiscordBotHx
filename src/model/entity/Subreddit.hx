@@ -9,7 +9,7 @@ import utils.HttpUtils;
 import model.Entity.EntityProperties;
 
 class Subreddit extends Entity {
-    private static inline var CHANNEL_ID = '200282258735759360';
+    private static inline var CHANNEL_ID = '210420281401933824';
 
     public static var properties: EntityProperties = {
         tableName: 'subreddit',
