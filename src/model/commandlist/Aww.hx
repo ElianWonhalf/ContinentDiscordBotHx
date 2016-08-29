@@ -58,8 +58,13 @@ class Aww implements ICommandDefinition {
                 });
 
                 var picture = ArrayUtils.random(children);
+                var serverId = DiscordUtils.getServerIdFromMessage(_context.getMessage());
+                var message = author + ' => ' + ~/&amp;/g.replace(picture.data.url, '&') + '\n\n';
 
-                _context.rawSendToChannel(author + ' => ' + ~/&amp;/g.replace(picture.data.url, '&') + '\n\nLien vers le topic : <https://www.reddit.com' + picture.data.permalink + '>');
+                message += LangCenter.instance.translate(serverId, 'model.commandlist.aww.process.topic_link');
+                message += ' <https://www.reddit.com' + picture.data.permalink + '>';
+
+                _context.rawSendToChannel(message);
             } else {
                 Logger.error('Failed to load a cat picture');
                 _context.sendToChannel('model.commandlist.aww.process.fail', cast [author]);

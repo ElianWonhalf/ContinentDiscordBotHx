@@ -160,6 +160,9 @@
   "model.commandlist.aww.process.fail": [
     "Welp... Seems like Reddit just crashed. I'm sorry %% :( ..."
   ],
+  "model.commandlist.aww.process.topic_link": [
+    "Link to the topic:"
+  ],
 
   "model.commandlist.penguin.description": [
     "Displays a random penguin"

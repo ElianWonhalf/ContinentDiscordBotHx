@@ -140,6 +140,9 @@
   "model.commandlist.aww.process.fail": [
     "Bon... Reddit a planté on dirait. Je suis désolé %% :( ..."
   ],
+  "model.commandlist.aww.process.topic_link": [
+    "Lien vers le topic :"
+  ],
 
   "model.commandlist.penguin.description": [
     "Affiche un manchot aléatoire"
