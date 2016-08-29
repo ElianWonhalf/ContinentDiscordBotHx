@@ -12,6 +12,7 @@
         <antcall target="unpack"/>
         <antcall target="delete-package"/>
         <antcall target="unset-token"/>
+        <antcall target="dump-sql"/>
     </target>
 
     <target name="dump-sql">
