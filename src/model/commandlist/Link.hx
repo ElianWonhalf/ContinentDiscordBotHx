@@ -30,7 +30,7 @@ class Link implements ICommandDefinition {
 
             link.retrieve(uniqueValues, function(found) {
                 if (found) {
-                    _context.rawSendToChannel(author + ' => ' + link.content);
+                    _context.rawSendToChannel(link.content);
                 } else {
                     _context.sendToChannel('model.commandlist.link.process.not_found', cast [author]);
                 }
