@@ -81,7 +81,7 @@ class Subreddit extends Entity {
                             message += '\n\n';
                         }
 
-                        message += '`' + child.data.score + '` ' + child.data.title + ' | **' + child.data.author + '** | *' + child.data.num_comments + '* :speech_balloon: | <https://www.reddit.com' + child.data.permalink + '>';
+                        message += '__' + name + '__: ' + child.data.title + ' | **' + child.data.author + '** | *' + child.data.num_comments + '* :speech_balloon: | <https://www.reddit.com' + child.data.permalink + '>';
                     }
 
                     sendMessage(context, DiscordUtils.splitLongMessage(message), 0);
