@@ -127,6 +127,13 @@
     "Bon... random.cat a planté on dirait. Je suis désolé %% :( ..."
   ],
 
+  "model.commandlist.ipa.description": [
+    "Permet de transcrire du X-SAMPA en IPA"
+  ],
+  "model.commandlist.ipa.process.fail": [
+    "Tu ne m'as donné aucune chaîne à transcrire, %%. Après j'veux bien essayer, hein. Mais ça risque très fortement de donner quelque chose d'aléatoire. Comme... Betterave."
+  ],
+
   "model.commandlist.dog.description": [
     "Affiche un chien aléatoire"
   ],

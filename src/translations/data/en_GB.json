@@ -147,6 +147,13 @@
     "Welp... Seems like random.cat just crashed. I'm sorry %% :( ..."
   ],
 
+  "model.commandlist.ipa.description": [
+    "Allows you to transcript from X-SAMPA to IPA"
+  ],
+  "model.commandlist.ipa.process.fail": [
+    "You gave me no string to transcript, %%. Well, I can try, ya know. But it can output something really random. Like... Beetroot."
+  ],
+
   "model.commandlist.dog.description": [
     "Displays a random dog"
   ],
