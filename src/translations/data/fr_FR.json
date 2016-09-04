@@ -427,7 +427,7 @@
   ],
 
   "model.commandlist.link.description": [
-    "Vous pouvez récupérer le lien vers une ressource utile concernant le jeu"
+    "Vous pouvez récupérer le lien vers une ressource utile"
   ],
   "model.commandlist.link.process.not_found": [
     "Désolé %%, je n'ai pas trouvé de ressource associée à ce nom :/ ..."

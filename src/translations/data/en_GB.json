@@ -39,7 +39,7 @@
   ],
 
   "model.commandlist.link.description": [
-    "You can retrieve a useful link to a game resource"
+    "You can retrieve a useful link to a resource"
   ],
   "model.commandlist.link.process.not_found": [
     "Sorry %%, I didn't find any resource with this name :/ ..."
