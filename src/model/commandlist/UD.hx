@@ -1,5 +1,6 @@
 package model.commandlist;
 
+import Math;
 import config.Config;
 import StringTools;
 import StringTools;
@@ -11,7 +12,7 @@ import utils.HttpUtils;
 import translations.LangCenter;
 
 class UD implements ICommandDefinition {
-    public var paramsUsage = '(word or expression)';
+    public var paramsUsage = '(word or expression) *(definition number)*';
     public var description: String;
     public var hidden = false;
 
@@ -28,6 +29,18 @@ class UD implements ICommandDefinition {
         var author = _context.getMessage().author;
 
         if (args.length > 0) {
+            var definitionIndex: Int = 1;
+
+            if (!Math.isNaN(cast args[args.length - 1])) {
+                definitionIndex = cast args.pop();
+            }
+
+            if (definitionIndex > 0) {
+                definitionIndex--;
+            } else {
+                definitionIndex = 0;
+            }
+
             var search = StringTools.urlEncode(args.join(' '));
 
             HttpUtils.query(false, 'api.urbandictionary.com', '/v0/define?term=' + search, cast HTTPMethod.Get, function (data: String) {
@@ -43,9 +56,13 @@ class UD implements ICommandDefinition {
                     var list: Array<Dynamic> = cast response.list;
 
                     if (list.length > 0) {
-                        var definition: String = StringTools.trim(list[0].definition);
-                        var example: String = StringTools.trim(list[0].example);
-                        var link: String = StringTools.trim(list[0].permalink);
+                        if (definitionIndex > list.length - 1) {
+                            definitionIndex = list.length - 1;
+                        }
+
+                        var definition: String = StringTools.trim(list[definitionIndex].definition);
+                        var example: String = StringTools.trim(list[definitionIndex].example);
+                        var link: String = StringTools.trim(list[definitionIndex].permalink);
                         var messageWithoutDefinition: String = author + ' => ...\n\n<' + link + '>';
                         var length: Int = Config.MESSAGE_MAX_LENGTH - messageWithoutDefinition.length;
 
