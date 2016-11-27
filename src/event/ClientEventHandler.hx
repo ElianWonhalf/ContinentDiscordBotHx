@@ -1,5 +1,6 @@
 package event;
 
+import config.AuthDetails;
 import model.IntervalHandler;
 import config.Config;
 import model.entity.WelcomeMessage;
@@ -20,6 +21,8 @@ import discordhx.client.Client;
 import utils.Logger;
 
 class ClientEventHandler extends EventHandler<Client> {
+    private static inline var LEONARD_ID = '223944789437972490';
+
     private override function process(): Void {
         _eventEmitter.on(cast ClientEventType.READY, readyHandler);
         _eventEmitter.on(cast ClientEventType.MESSAGE, messageHandler);
@@ -38,12 +41,16 @@ class ClientEventHandler extends EventHandler<Client> {
     }
 
     private function messageHandler(msg: Message): Void {
-        handleMessage(msg);
+        if (msg.author.id != LEONARD_ID && msg.author.username.toLowerCase().indexOf('bot') < 0) {
+            handleMessage(msg);
+        }
     }
 
     private function messageUpdatedHandler(oldMsg: Message, newMsg: Message): Void {
-        Logger.info('Handling edited message from ' + oldMsg.author.username + '. Was\n\n' + oldMsg.cleanContent + '\n\nIs now\n\n' + newMsg.cleanContent + '\n\n');
-        handleMessage(newMsg, true);
+        if (oldMsg.author.id != LEONARD_ID && oldMsg.author.username.toLowerCase().indexOf('bot') < 0 && oldMsg.content != newMsg.content) {
+            Logger.info('Handling edited message from ' + oldMsg.author.username + '. Was\n\n' + oldMsg.cleanContent + '\n\nIs now\n\n' + newMsg.cleanContent + '\n\n');
+            handleMessage(newMsg, true);
+        }
     }
 
     private function handleMessage(msg: Message, edited = false): Void {
@@ -66,7 +73,14 @@ class ClientEventHandler extends EventHandler<Client> {
             Command.instance.process(context);
         } else if (messageIsPrivate || messageIsForMe) {
             Logger.info('Received message ' + info);
-            Chat.instance.ask(context);
+
+            if (msg.author.id != AuthDetails.OWNER_ID && messageIsPrivate) {
+                context.rawSendToOwner('Message entrant de **' + msg.author.username + '** :\n' + msg.content);
+            }
+
+            if (!messageIsPrivate || Config.CHAT_IN_PRIVATE) {
+                Chat.instance.ask(context);
+            }
         }
     }
 

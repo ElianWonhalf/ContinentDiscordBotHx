@@ -127,6 +127,19 @@
     "Bon... random.cat a planté on dirait. Je suis désolé %% :( ..."
   ],
 
+  "model.commandlist.ud.description": [
+    "Recherche une définition dans le Urban Dictionary"
+  ],
+  "model.commandlist.ud.process.fail": [
+    "Je pense que les serveurs de Urban Dictionary sont en feu là... Essaie plus tard, %% !"
+  ],
+  "model.commandlist.ud.process.syntax_error": [
+    "Tu n'aurais pas oublié de me donner une recherche, par hasard, %% ?"
+  ],
+  "model.commandlist.ud.process.404": [
+    "Désolé %%, je n'ai trouvé aucun résultat."
+  ],
+
   "model.commandlist.ipa.description": [
     "Permet de transcrire du X-SAMPA en IPA"
   ],
@@ -256,6 +269,16 @@
   ],
   "model.commandlist.deletewelcomemessage.process.success": [
     "%% => Compris, c'est supprimé !"
+  ],
+
+  "model.commandlist.describe.description": [
+    "Vous pouvez demander à un ordinateur comme moi de décrire une image !"
+  ],
+  "model.commandlist.describe.process.wait": [
+    "C'est parti %%, laisse-moi quelques secondes de réflexion..."
+  ],
+  "model.commandlist.describe.process.error": [
+    "T'as oublié de me donner une image :| ..."
   ],
 
   "model.commandlist.deletelink.description": [

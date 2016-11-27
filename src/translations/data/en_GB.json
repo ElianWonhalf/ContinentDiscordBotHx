@@ -150,6 +150,19 @@
     "Welp... Seems like random.cat just crashed. I'm sorry %% :( ..."
   ],
 
+  "model.commandlist.ud.description": [
+    "Searches for a definition in the Urban Dictionary"
+  ],
+  "model.commandlist.ud.process.fail": [
+    "I think that Urban Dictionary servers might be on fire right now... Try again later, %%!"
+  ],
+  "model.commandlist.ud.process.syntax_error": [
+    "Didn't you forget to give me something to search for, %%?"
+  ],
+  "model.commandlist.ud.process.404": [
+    "Sorry %%, I didn't find any match."
+  ],
+
   "model.commandlist.ipa.description": [
     "Allows you to transcript from X-SAMPA to IPA"
   ],
@@ -279,6 +292,16 @@
   ],
   "model.commandlist.deletewelcomemessage.process.success": [
     "%% => Got it, deleted it!"
+  ],
+
+  "model.commandlist.describe.description": [
+    "You can ask a bot like me to describe a picture!"
+  ],
+  "model.commandlist.describe.process.wait": [
+    "Alright %%, just let me a few seconds..."
+  ],
+  "model.commandlist.describe.process.error": [
+    "You forgot to give me a picture :| ..."
   ],
 
   "model.commandlist.deletelink.description": [
