@@ -58,7 +58,11 @@ class Command {
         if (lastCommand == null) {
             context.sendToChannel('model.repeatcommand.process.no_last_command', cast [context.getMessage().author]);
         } else {
-            requestExecuteCommand(context, lastCommand.name, lastCommand.args.concat(additionnalArgs));
+            if (lastCommand.name == 'help') {
+                displayHelpDialog(context);
+            } else {
+                requestExecuteCommand(context, lastCommand.name, lastCommand.args.concat(additionnalArgs));
+            }
         }
     }
 
@@ -118,6 +122,11 @@ class Command {
     private function displayHelpDialog(context: CommunicationContext): Void {
         var serverId: String = DiscordUtils.getServerIdFromMessage(context.getMessage());
         var author = context.getMessage().author;
+
+        _lastCommand.set(context.getMessage().channel.id, {
+            name: 'help',
+            args: []
+        });
 
         Permission.getDeniedCommandList(author.id, context.getMessage().channel.id, serverId, function (err: Dynamic, deniedCommandList: Array<String>) {
             if (err != null) {
